@@ -62,13 +62,53 @@ public class ElectronicManaget {
     //chỉnh sửa sản phẩm khi biết id
     public void repairElectronic() {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Nhập mã sản phẩm bạn muốn sửa");
-        int id = scanner.nextInt();
-        for (Electronic electronic : electronicList) {
-            if (electronic.getId() == id) {
-                electronic.inputInfoElectronic();
-            } else System.out.println("Không tìm thấy sản phẩm có mã id này");
+        System.out.println("Bạn muốn sửa thông tin của đồ gia dụng nào?");
+        System.out.println("1. Quạt");
+        System.out.println("2. Ti Vi");
+        System.out.println("3. Tủ lạnh");
+        int choice = scanner.nextInt();
+        scanner.nextLine();
+        switch (choice) {
+            case 1: {
+                System.out.println("Nhập id của quạt mà bạn muốn sửa");
+                int id = scanner.nextInt();
+                for (Electronic electronic : electronicList) {
+                    if (electronic.getId() == id) {
+                        if (electronic instanceof Fan) {
+                            ((Fan) electronic).inputInFoFan();
+                        }
+                    }
+                }
+                break;
+            }
+            case 2:{
+                System.out.println("Nhâp id của TV mà bạn muốn sửa");
+                int id=scanner.nextInt();
+                for (Electronic electronic:electronicList){
+                    if (electronic.getId()==id){
+                        if (electronic instanceof Television){
+                            ((Television)electronic).inputInFoTelevision();
+                        }
+                    }
+                }
+                break;
+            }
+            case 3:{
+                System.out.println("Nhập id tủ lạnh mà bạn muốn sửa");{
+                    int id=scanner.nextInt();
+                    for (Electronic electronic:electronicList){
+                        if (electronic.getId()==id){
+                            if (electronic instanceof Fridge){
+                                ((Fan)electronic).inputInFoFan();
+                            }
+                        }
+                    }
+                }
+                break;
+            }
         }
+
+
     }
 
     //sắp xếp sản phẩm theo giá

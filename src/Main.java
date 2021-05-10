@@ -11,6 +11,7 @@ public class Main {
         scanner.nextLine();
         switch (choices){
             case 1:{
+
                 int choice;
                 do {
 
@@ -127,7 +128,7 @@ public class Main {
     }
     private static void menuKhachHang(){
         System.out.println("---------------------------------------------------");
-        System.out.println("|       **    Quản lý đồ gia dụng     **          |");
+        System.out.println("| ** Chào mừng đến với cửa hàng của OPG Twyler ** |");
         System.out.println("|-------------------------------------------------|");
         System.out.println("| 1.Hiển thị thông tin của sản phẩm trong cửa hàng|");
         System.out.println("| 2. Sắp xếp giá sản phẩm                         |");
